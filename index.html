@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>The Scala.js Tutorial</title>
 </head>
-<body>
+    <body>
 
-<div id="root"></div>
+        <div id="root"></div>
 
-<!-- Include Scala.js compiled code -->
-<script type="text/javascript" src="./target/scala-2.11/scala-js-template-fastopt.js"></script>
-<script type="text/javascript">
-      com.example.Hello().main(document.getElementById("root"));
-    </script>
-</body>
+        <!-- Include Scala.js compiled code -->
+        <script type="text/javascript" src="./target/scala-2.12/scalajs-test-fastopt.js"></script>
+        <script type="text/javascript">
+            rip.hansolo.web.ScalaJsTest().main( document.getElementById("root") );
+        </script>
+    </body>
 </html>
