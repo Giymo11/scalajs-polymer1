@@ -7,7 +7,7 @@ import scalatags.JsDom.all._
 import scala.scalajs.js.annotation.JSExport
 
 @JSExport
-object ScalaJsTest {
+object ScalaJsPolymer {
   @JSExport
   def main(root: dom.html.Div): Unit = {
     val content = h2("Hello World.").render

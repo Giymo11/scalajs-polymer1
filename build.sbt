@@ -2,7 +2,7 @@ import sbt.Keys._
 
 lazy val root: Project = (project in file("."))
   .settings(
-    name := """scalajs-test""",
+    name := """scalajs-polymer1""",
     version := "1.0",
     scalaVersion := "2.12.0",
     libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.1",
