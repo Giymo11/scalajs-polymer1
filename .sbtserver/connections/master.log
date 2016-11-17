@@ -1,0 +1,34 @@
+New log file opened at Thu Nov 17 14:39:12 CET 2016 by 3836@DESKTOP-1F8T79V
+Taking next connection to: 54543
+New client attempting to connect on port: 54544-54543
+  Address = /192.168.0.2:54543
+This client on port 54544 has uuid a0e2335a-0448-4286-8150-35d4e41dbacb configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-a0e2335a-0448-4286-8150-35d4e41dbacb
+Taking next connection to: 54543
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54543
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54543
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54543
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54543
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54543
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54543
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 54543
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 3836@DESKTOP-1F8T79V logs at Thu Nov 17 15:03:12 CET 2016, goodbye.
