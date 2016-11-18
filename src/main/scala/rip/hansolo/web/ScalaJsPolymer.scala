@@ -10,7 +10,7 @@ import scala.scalajs.js.annotation.JSExport
 object ScalaJsPolymer {
   @JSExport
   def main(root: dom.html.Div): Unit = {
-    val content = h2("Hello World.").render
+    val content = div("Hello World from ScalaJS!").render
 
     root.appendChild(content)
   }

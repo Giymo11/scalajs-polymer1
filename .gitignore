@@ -1,4 +1,5 @@
-.idea/
-project/project/
-project/target/
+bower_components/
+build/
+node_modules/
 target/
+*.class
