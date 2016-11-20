@@ -3,7 +3,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="scalajs-import.html">
 
-<dom-module id="scalajs-test">
+<dom-module id="scalajs-hacking">
   <template>
 		<style>
 		.content {
@@ -16,16 +16,6 @@
 		<div id="root"></div>
   </template>
   <script type="text/javascript">
-		Polymer({
-			is: "scalajs-test",
-			created: function() {
-				console.log("It is alive.. maybe?");
-			},
-			ready: function() {
-				console.log("It is alive!")
-				rip.hansolo.web.ScalaJsPolymer().main(this.$.root);
-				rip.hansolo.web.ScalaJsPolymer().main(this.$$("#root"));
-			}
-		});
+		rip.hansolo.web.ScalajsPolymerHacking().main();
 	</script>
 </dom-module>
