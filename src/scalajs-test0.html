@@ -1,19 +1,20 @@
 <link rel="import" href="../bower_components/polymer/polymer.html" />
 <link rel="import" href="scalajs-import.html" />
-<dom-module id="scalajs-test0"><template><style>
-						.content {
-							margin-top: 32px;
-							margin-bottom: 32px;
-						}</style><div>Waddap</div><div>IT DAT BOI</div><div id="root"></div></template><script type="text/javascript">
-						Polymer({
-							is: "scalajs-test0",
-							created: function() {
-								console.log("It is alive.. maybe?");
-							},
-							ready: function() {
-								console.log("It is alive!")
-								rip.hansolo.web.ScalaJsPolymer().main(this.$.root);
-								rip.hansolo.web.ScalaJsPolymer().main(this.$$("#root"));
-							}
-						});
-					</script></dom-module>
+<dom-module id="scalajs-test0"><template><style>.content {
+				margin-top: 32px;
+				margin-bottom: 32px;
+			}</style><div>Waddap</div>
+<div>IT DAT BOIII</div>
+<div id="root"></div></template><script type="text/javascript">
+			Polymer({
+				is: "scalajs-test0",
+				created: function() {
+					console.log("It is alive.. maybe?");
+				},
+				ready: function() {
+					console.log("It is alive!")
+					rip.hansolo.web.ScalaJsPolymer().main(this.$.root);
+					rip.hansolo.web.ScalaJsPolymer().main(this.$$("#root"));
+				}
+			});
+		</script></dom-module>

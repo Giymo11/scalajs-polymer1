@@ -1,63 +1,20 @@
 package rip.hansolo
 
+
+import rip.hansolo.webcomponents._
+
+
 object Main {
 	def main(args: Array[String]): Unit = {
 		println("hello world")
 
-		import scalatags.Text.all._
-
-		val componentName = "scalajs-test0"
-		val rootId = "root"
-
-		def addQuotes(value: String) = "\"" + value + "\""
-
-		val polymerTags = Seq(
-			link(
-				rel := "import",
-				href := "../bower_components/polymer/polymer.html"),
-			link(
-				rel := "import",
-				href := "scalajs-import.html"),
-			tag("dom-module")(
-				attr("id") := componentName,
-				tag("template")(
-					tag("style")("""
-						.content {
-							margin-top: 32px;
-							margin-bottom: 32px;
-						}"""),
-					div("Waddap"),
-					div("IT DAT BOI"),
-					div(
-						id := rootId
-					)
-				),
-				script(
-					`type` := "text/javascript",
-					raw("""
-						Polymer({
-							is: """" + componentName + """",
-							created: function() {
-								console.log("It is alive.. maybe?");
-							},
-							ready: function() {
-								console.log("It is alive!")
-								rip.hansolo.web.ScalaJsPolymer().main(this.$.""" + rootId + """);
-								rip.hansolo.web.ScalaJsPolymer().main(this.$$("#""" + rootId + """"));
-							}
-						});
-					""")
-				)
-			)
-		)
-
-		val polymerElementHtml = polymerTags.map(_.render).mkString("\n")
+		val polymerElementHtml = PolymerTest0.rawHtmlString
 		println(polymerElementHtml)
 
 		import java.io.PrintWriter
 		import java.io.File
 
-		val pw = new PrintWriter(new File("./src/" + componentName + ".html"))
+		val pw = new PrintWriter(new File("./src/" + PolymerTest0.componentName + ".html"))
 		pw.write(polymerElementHtml)
 		pw.close()
 	}
