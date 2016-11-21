@@ -9,13 +9,11 @@ import scala.scalajs.js.annotation._
 import scala.scalajs.js.Dynamic.{literal => lit}
 
 
-object PolymerInit[T] extends JSApp {
+object ObserverTest extends JSApp {
 	def main(): Unit = {
-		Polymer(js.constructorOf[T])
+		Polymer(js.constructorOf[ObserverTestElement])
 	}
 }
-
-object ObserverTest extends PolymerInit[ObserverTestElement]
 
 @ScalaJSDefined
 @JSExport

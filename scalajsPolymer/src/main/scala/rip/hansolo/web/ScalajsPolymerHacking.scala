@@ -23,7 +23,7 @@ class ScalajsPolymerHackingElement extends PolymerElement {
   override def is: String = "scalajs-hacking"
 
   override def created(): Unit = {
-		println("Maybe it'll be alive soon?")
+		println("Maybe it'll be alive soon? LOLOLO")
 	}
   override def ready(): Unit = {
 		println("It probably is now!");
