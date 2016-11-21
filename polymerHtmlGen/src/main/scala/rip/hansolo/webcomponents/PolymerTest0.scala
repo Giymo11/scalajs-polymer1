@@ -4,12 +4,11 @@ package rip.hansolo.webcomponents
 import scalatags.Text.all._
 
 import rip.hansolo.polymer._
-import rip.hansolo.polymer.PolymerTags._
 
 
-object PolymerTest0 {
+object PolymerTest0 extends PolymerElement {
 
-	val componentName = "scalajs-test0"
+	val is = "scalajs-test0"
 
 	val rawHtmlString = {
 
@@ -29,7 +28,7 @@ object PolymerTest0 {
 
 		val insideScript = """
 			Polymer({
-				is: """" + componentName + """",
+				is: """" + is + """",
 				created: function() {
 					console.log("It is alive.. maybe?");
 				},
@@ -41,6 +40,6 @@ object PolymerTest0 {
 			});
 		"""
 
-		PolymerHtml.boilerplate(componentName, insideScript, insideTemplate, insideStyle)
+		boilerplate(is, insideScript, insideTemplate, insideStyle)
 	}
 }

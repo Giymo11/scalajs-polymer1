@@ -2,6 +2,7 @@ package rip.hansolo.polymer
 
 import scalatags.Text.all._
 
+
 object PolymerTags {
 
 	def linkImport(hrefValue: String) = link(
@@ -12,25 +13,31 @@ object PolymerTags {
 	val template = tag("template")
 }
 
-object PolymerHtml {
+abstract class PolymerElement {
 
-	import PolymerTags._
+  def is: String
+  def rawHtmlString: String
 
-	def boilerplate(componentName: String, insideScript: String, insideTemplate: String = "", insideStyle: String = "") = Seq(
-			linkImport("../bower_components/polymer/polymer.html"),
-			linkImport("scalajs-import.html"),
-			domModule(
-				id := componentName,
-				template(
-					tag("style")(
-						raw(insideStyle)
-					),
-					raw(insideTemplate)
-				),
-				script(
-					`type` := "text/javascript",
-					raw(insideScript)
-				)
-			)
-		).map(_.render).mkString("\n")
+  import PolymerTags._
+
+  def boilerplate(componentName: String, insideScript: String, insideTemplate: String = "", insideStyle: String = "") = Seq(
+    linkImport("../bower_components/polymer/polymer.html"),
+    linkImport("scalajs-import.html"),
+    domModule(
+      id := componentName,
+      template(
+        tag("style")(
+          raw(insideStyle)
+        ),
+        raw(insideTemplate)
+      ),
+      script(
+        `type` := "text/javascript",
+        raw(insideScript)
+      )
+    )
+  ).map(_.render).mkString("\n")
+
+  def twoWayBinding(prop: String) = s"{{$prop}}"
+  def oneWayBinding(prop: String) = s"[[$prop]]"
 }

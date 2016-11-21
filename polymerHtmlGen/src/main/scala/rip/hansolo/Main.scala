@@ -1,6 +1,7 @@
 package rip.hansolo
 
 
+import rip.hansolo.polymer.PolymerElement
 import rip.hansolo.webcomponents._
 
 
@@ -8,15 +9,27 @@ object Main {
 	def main(args: Array[String]): Unit = {
 		println("hello world")
 
-		val polymerElementHtml = PolymerTest0.rawHtmlString
-		println(polymerElementHtml)
+		val polymerElements = Seq(
+			PolymerHacking0,
+			PolymerTest0,
+			ObserverTest0
+		)
 
-		import java.io.PrintWriter
-		import java.io.File
+		def writeComponentToDisk(folder: String, component: PolymerElement) = {
 
-		val pw = new PrintWriter(new File("./src/" + PolymerTest0.componentName + ".html"))
-		pw.write(polymerElementHtml)
-		pw.close()
+			import java.io.PrintWriter
+			import java.io.File
+
+			val outputPath = folder + component.is + ".html"
+			println(outputPath)
+
+			val pw = new PrintWriter(new File(outputPath))
+			pw.write(component.rawHtmlString)
+			pw.close()
+		}
+
+		polymerElements.foreach(writeComponentToDisk("./src/", _))
+
 	}
 
 /*

@@ -1,7 +1,6 @@
 package rip.hansolo.web
 
 import rip.hansolo.polymer._
-import rip.hansolo.polymer.Polymer._
 
 import scala.scalajs._
 import scala.scalajs.js._

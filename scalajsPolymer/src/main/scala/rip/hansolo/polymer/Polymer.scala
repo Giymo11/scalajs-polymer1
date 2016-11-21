@@ -1,11 +1,11 @@
 package rip.hansolo.polymer
 
-import org.scalajs.dom.raw.{HTMLElement, MouseEvent}
 import org.scalajs.dom
+import org.scalajs.dom.raw.HTMLElement
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSExport, JSExportDescendentObjects, JSName, ScalaJSDefined}
 import scala.scalajs.js.Dynamic.{literal => lit}
+import scala.scalajs.js.annotation.{JSBracketAccess, JSName, ScalaJSDefined}
 
 @js.native
 object Polymer extends js.Object {
@@ -68,7 +68,7 @@ object Property {
 	* aValue should be of type boolean, number, string or function.
 	*/
   def apply(
-		aType: js.Any, 
+		aType: js.Any,
 		aValue: js.Any = null,
 		reflectToAttribute: Boolean = false,
 		readOnly: Boolean = false,
@@ -76,8 +76,8 @@ object Property {
 		computed: String = null,
 		observer: String = null): Property = {
 			lit(
-				"type" -> aType, 
-				"value" -> aValue, 
+				"type" -> aType,
+				"value" -> aValue,
 				"reflectToAttribute" -> reflectToAttribute,
 				"readOnly" -> readOnly,
 				"notify" -> shouldNotify,
