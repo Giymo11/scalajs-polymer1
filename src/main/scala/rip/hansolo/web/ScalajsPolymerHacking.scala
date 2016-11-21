@@ -1,7 +1,7 @@
 package rip.hansolo.web
 
 import rip.hansolo.polymer._
-import Polymer._
+import rip.hansolo.polymer.Polymer._
 
 import scala.scalajs.js.annotation._
 import scala.scalajs.js.JSApp
@@ -22,17 +22,12 @@ class ScalajsPolymerHackingElement extends PolymerElement {
 
   override def is: String = "scalajs-hacking"
 
-	def beforeRegister(): Unit = ()
-  def created(): Unit = {
+  override def created(): Unit = {
 		println("Maybe it'll be alive soon?")
 	}
-  def ready(): Unit = {
+  override def ready(): Unit = {
 		println("It probably is now!");
 		ScalaJsPolymer.main(this.`$`.root.asInstanceOf[dom.html.Div]);
 		ScalaJsPolymer.main(this.`$$`("#root").asInstanceOf[dom.html.Div]);
 	}
-  def attached(): Unit = ()
-  def detached(): Unit = ()
-
-	def attributeChanged(aName: String, aType: String): Unit = ()
 }

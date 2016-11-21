@@ -26,6 +26,14 @@ abstract class PolymerElement extends PolymerBase {
 	def is: String
 	def properties: js.Dynamic = lit()
 	def observers: js.Array[String] = js.Array()
+
+	override def beforeRegister(): Unit = ()
+  override def created(): Unit = ()
+  override def ready(): Unit = ()
+  override def attached(): Unit = ()
+  override def detached(): Unit = ()
+
+	def attributeChanged(aName: String, aType: String): Unit = ()
 }
 
 @ScalaJSDefined
@@ -47,9 +55,34 @@ trait PolymerAttrObserver extends js.Object {
 trait Property extends js.Object {
   val aType: String = js.native
   val aValue: String = js.native
+	val reflectToAttribute: Boolean = js.native
+	val readOnly: Boolean = js.native
+	val shouldNotify: Boolean = js.native
+	val computed: String = js.native
+	val observer: String = js.native
 }
 
 object Property {
-  def apply(aType: String, aValue: String): Property =
-    js.Dynamic.literal("type" -> aType, "value" -> aValue).asInstanceOf[Property]
+	/**
+	* aType should be of type Boolean, Date, Number, String, Array or Object
+	* aValue should be of type boolean, number, string or function.
+	*/
+  def apply(
+		aType: js.Any, 
+		aValue: js.Any = null,
+		reflectToAttribute: Boolean = false,
+		readOnly: Boolean = false,
+		shouldNotify: Boolean = false,
+		computed: String = null,
+		observer: String = null): Property = {
+			lit(
+				"type" -> aType, 
+				"value" -> aValue, 
+				"reflectToAttribute" -> reflectToAttribute,
+				"readOnly" -> readOnly,
+				"notify" -> shouldNotify,
+				"computed" -> computed,
+				"observer" -> observer
+			).asInstanceOf[Property]
+		}
 }
