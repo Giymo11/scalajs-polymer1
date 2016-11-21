@@ -26,7 +26,14 @@ sudo apt-get install sbt
 
 ## Development
 
-Have one window open running `sbt ~fastOptJS`.
+Have one window open running `sbt ~scalajsPolymer/fastOptJS`, one doing `sbt ~polymerHtmlGen/run`.
 
-Then just do `polymer serve` on another window and enjoy!
+Then just do `polymer serve` in another window and enjoy!
+
+## TODO
+
+Figure out how to get the most information and typesafety without repeating stuff all the time.
+Maybe put some stuff into shared (between JS and JVM)? Maybe the tags themselves?
+
+Get one clean command for generating the HTML and the JS going.
 
