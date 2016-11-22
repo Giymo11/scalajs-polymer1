@@ -10,9 +10,7 @@ object Main {
 		println("hello world")
 
 		val polymerElements = Seq(
-			PolymerHacking0,
-			PolymerTest0,
-			ObserverTest0
+			RedditApp
 		)
 
 		def writeComponentToDisk(folder: String, component: PolymerElement) = {

@@ -9,6 +9,7 @@ object PolymerTags {
 	def linkImport(hrefValue: String) = link(
 				rel := "import",
 				href := hrefValue)
+  def eventListener(event: String): String = "on-" + event
 
 	val domModule = tag("dom-module")
 	val template = tag("template")
@@ -25,24 +26,26 @@ abstract class PolymerElement {
                    componentName: String,
                    insideScript: String,
                    insideTemplate: Seq[TypedTag[String]] = Seq(),
+                   imports: Seq[TypedTag[String]] = Seq(),
                    insideStyle: String = ""
-                 ): String = Seq(
-    linkImport("../bower_components/polymer/polymer.html"),
-    linkImport("scalajs-import.html"),
-    domModule(
-      id := componentName,
-      template(
-        tag("style")(
-          raw(insideStyle)
+                 ): String = {
+    imports ++ Seq(
+      linkImport("../bower_components/polymer/polymer.html"),
+      linkImport("scalajs-import.html"),
+      domModule(
+        id := componentName,
+        template(
+          tag("style")(
+            raw(insideStyle)
+          ),
+          insideTemplate
         ),
-        insideTemplate
-      ),
-      script(
-        `type` := "text/javascript",
-        raw(insideScript)
+        script(
+          `type` := "text/javascript",
+          raw(insideScript)
+        )
       )
-    )
-  ).render
+    )}.render
 
   def twoWayBinding(prop: String) = s"{{$prop}}"
   def oneWayBinding(prop: String) = s"[[$prop]]"

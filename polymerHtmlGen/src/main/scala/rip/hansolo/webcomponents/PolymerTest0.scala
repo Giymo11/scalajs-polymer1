@@ -40,6 +40,6 @@ object PolymerTest0 extends PolymerElement {
 			});
 		"""
 
-		boilerplate(is, insideScript, insideTemplate, insideStyle)
+		boilerplate(is, insideScript, insideTemplate, insideStyle = insideStyle)
 	}
 }

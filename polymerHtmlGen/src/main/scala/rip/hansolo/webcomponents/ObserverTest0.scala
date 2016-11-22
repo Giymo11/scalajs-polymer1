@@ -34,5 +34,5 @@ object ObserverTest0 extends PolymerElement {
     )
   )
 
-  override def rawHtmlString: String = boilerplate(name, insideScript, insideTemplate, insideStyle)
+  override def rawHtmlString: String = boilerplate(name, insideScript, insideTemplate, insideStyle = insideStyle)
 }

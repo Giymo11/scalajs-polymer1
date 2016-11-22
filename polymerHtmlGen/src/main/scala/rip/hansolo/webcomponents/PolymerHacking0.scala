@@ -26,5 +26,5 @@ object PolymerHacking0 extends PolymerElement {
 
   val insideScript = "rip.hansolo.web.ScalajsPolymerHacking0().main();"
 
-  override def rawHtmlString: String = boilerplate(is, insideScript, insideTemplate, insideStyle)
+  override def rawHtmlString: String = boilerplate(is, insideScript, insideTemplate, insideStyle = insideStyle)
 }
