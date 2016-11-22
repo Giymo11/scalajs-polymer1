@@ -22,7 +22,7 @@ object PolymerHacking0 extends PolymerElement {
     div("Waddap"),
     div("IT DAT BOIIIII"),
     div(id := rootId)
-  ).map(_.render).mkString("\n")
+  )
 
   val insideScript = "rip.hansolo.web.ScalajsPolymerHacking0().main();"
 

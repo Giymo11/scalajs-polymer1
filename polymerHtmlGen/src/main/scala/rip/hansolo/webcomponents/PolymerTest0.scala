@@ -24,7 +24,7 @@ object PolymerTest0 extends PolymerElement {
 			div("Waddap"),
 			div("IT DAT BOIII"),
 			div(id := rootId)
-		).map(_.render).mkString("\n")
+		)
 
 		val insideScript = """
 			Polymer({

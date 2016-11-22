@@ -32,9 +32,7 @@ object ObserverTest0 extends PolymerElement {
       attr("on-tap") := Obs.buttonClick,
       "TEST BUTTON!!!"
     )
-  ).map(_.render).mkString("\n")
+  )
 
-
-
-  override def rawHtmlString(): String = boilerplate(name, insideScript, insideTemplate, insideStyle)
+  override def rawHtmlString: String = boilerplate(name, insideScript, insideTemplate, insideStyle)
 }

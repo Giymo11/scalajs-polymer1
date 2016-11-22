@@ -1,5 +1,6 @@
 package rip.hansolo.polymer
 
+import scalatags.Text.TypedTag
 import scalatags.Text.all._
 
 
@@ -20,7 +21,12 @@ abstract class PolymerElement {
 
   import PolymerTags._
 
-  def boilerplate(componentName: String, insideScript: String, insideTemplate: String = "", insideStyle: String = "") = Seq(
+  def boilerplate(
+                   componentName: String,
+                   insideScript: String,
+                   insideTemplate: Seq[TypedTag[String]] = Seq(),
+                   insideStyle: String = ""
+                 ): String = Seq(
     linkImport("../bower_components/polymer/polymer.html"),
     linkImport("scalajs-import.html"),
     domModule(
@@ -29,14 +35,14 @@ abstract class PolymerElement {
         tag("style")(
           raw(insideStyle)
         ),
-        raw(insideTemplate)
+        insideTemplate
       ),
       script(
         `type` := "text/javascript",
         raw(insideScript)
       )
     )
-  ).map(_.render).mkString("\n")
+  ).render
 
   def twoWayBinding(prop: String) = s"{{$prop}}"
   def oneWayBinding(prop: String) = s"[[$prop]]"
