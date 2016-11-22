@@ -12,5 +12,6 @@ object RedditAppCommon {
 
   object Method {
     val newOauthState = "newOauthState"
+    val onWheelEvent = "onWheelEvent"
   }
 }

@@ -1,6 +1,7 @@
 package rip.hansolo.webcomponents
 
 
+import org.scalajs.dom.WheelEvent
 import rip.hansolo.polymer.{Polymer, PolymerElement, Property}
 
 import scala.scalajs.js
@@ -34,4 +35,13 @@ class RedditAppElement extends PolymerElement {
   def newOauthState() = {
     this.oauthState = (1 to 16).map((_) => Random.nextPrintableChar()).mkString("")
   }
+
+  def onWheelEvent(wheelEvent: WheelEvent) = {
+    val fac = js.Math.abs(wheelEvent.deltaX / wheelEvent.deltaY)
+    println("lol " + wheelEvent.deltaY.toInt + ", " + fac)
+    if(fac < 0.01)
+      org.scalajs.dom.window.scrollBy(wheelEvent.deltaY.toInt, 0)
+  }
+
+  def scrollerrooni() = org.scalajs.dom.window.scrollBy(100, 0)
 }
